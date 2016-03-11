@@ -3,7 +3,7 @@ install.packages("devtools")
 library("devtools")
 library(ROCR)
 library(caTools)
-install_github('evaluatingModel','ShraddhaSurana')
+install_github('evaluatingModel','ShraddhaSurana',force = TRUE)
 library(evaluatingModel)
 ?performanceMeasure
 
@@ -11,7 +11,7 @@ install.packages("caTools")
 install.packages("ROCR")
 
 #---- Logistic Regression ----
-quality <- read.csv("quality/quality.csv")
+quality <- read.csv("dataset/quality.csv")
 str(quality)
 summary(quality)
 
@@ -74,10 +74,6 @@ plot(ROCRperf)
 plot(ROCRperf, colorize=TRUE)
 plot(ROCRperf, colorize=TRUE, print.cutoffs.at=seq(0,1,by=0.1), text.adj=c(-0.2,1.7))
 
-
-str(quality)
-
-glm(PoorCare ~ . , )
 
 
 
